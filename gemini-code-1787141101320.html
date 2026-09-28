@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anushka Jagtap | AI & Data Science Portfolio</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            pastel: {
+              cream: '#FAFAF7',
+              lavender: '#EAE6FA',
+              'lavender-dark': '#8E7DBE',
+              rose: '#FCE7ED',
+              'rose-dark': '#C97A91',
+              sage: '#E2EBE5',
+              'sage-dark': '#5B8266',
+              sky: '#E0F0F8',
+              'sky-dark': '#4F8AAB',
+              sand: '#F7EFE8',
+              slate: '#303642',
+              subtle: '#6B7280',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+<body class="bg-pastel-cream text-pastel-slate selection:bg-pastel-lavender selection:text-pastel-lavender-dark antialiased">
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-2 bg-pastel-slate text-white px-4 py-3 rounded-xl shadow-lg text-sm font-medium">
+    <i data-lucide="check-circle" class="w-4 h-4 text-pastel-sage"></i>
+    <span>Email copied to clipboard!</span>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 inset-x-0 z-40 bg-pastel-cream/80 backdrop-blur-md border-b border-pastel-lavender/50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="text-lg font-bold tracking-tight text-pastel-slate flex items-center gap-2">
+        <span class="w-7 h-7 rounded-lg bg-pastel-lavender text-pastel-lavender-dark flex items-center justify-center font-extrabold text-sm">A</span>
+        Anushka Jagtap
+      </a>
+      
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-pastel-subtle">
+        <a href="#about" class="hover:text-pastel-slate transition-colors">About</a>
+        <a href="#experience" class="hover:text-pastel-slate transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-pastel-slate transition-colors">Projects</a>
+        <a href="#skills" class="hover:text-pastel-slate transition-colors">Skills</a>
+        <a href="#education" class="hover:text-pastel-slate transition-colors">Education</a>
+        <a href="#contact" class="hover:text-pastel-slate transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#resume" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-white border border-pastel-lavender hover:bg-pastel-lavender/40 text-pastel-slate transition-all shadow-sm">
+          <i data-lucide="file-down" class="w-4 h-4 text-pastel-lavender-dark"></i>
+          Resume
+        </a>
+        <a href="#contact" class="px-4 py-2 rounded-xl text-xs font-semibold bg-pastel-slate text-white hover:bg-black transition-all shadow-sm">
+          Hire Me
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 pt-28 space-y-24">
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-6 pb-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pastel-sage/50 border border-pastel-sage-dark/20 text-pastel-sage-dark text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-pastel-sage-dark animate-pulse"></span>
+            Seeking Data & AI Opportunities
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-pastel-slate leading-tight">
+            Transforming Complex Data into <span class="text-transparent bg-clip-text bg-gradient-to-r from-pastel-lavender-dark to-pastel-rose-dark">Actionable Intelligence</span>.
+          </h1>
+
+          <p class="text-base sm:text-lg text-pastel-subtle font-normal leading-relaxed">
+            Final-year B.E. student in <strong class="font-semibold text-pastel-slate">Artificial Intelligence & Data Science</strong> at Savitribai Phule Pune University. Focused on analytics pipelines, statistical modeling, machine learning, and business-focused intelligence dashboards.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="#projects" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-pastel-slate text-white text-sm font-semibold hover:bg-black shadow-sm transition-all">
+              <i data-lucide="code-2" class="w-4 h-4"></i> View Featured Projects
+            </a>
+            <a href="#resume" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-gray-200 text-pastel-slate text-sm font-semibold hover:bg-gray-50 shadow-sm transition-all">
+              <i data-lucide="file-text" class="w-4 h-4 text-pastel-lavender-dark"></i> View Resume
+            </a>
+            <button onclick="copyEmail('anushka.jagtap@example.com')" class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-pastel-lavender/50 text-pastel-slate text-sm font-semibold hover:bg-pastel-lavender transition-all">
+              <i data-lucide="copy" class="w-4 h-4"></i> Copy Email
+            </button>
+          </div>
+
+          <!-- Social links -->
+          <div class="flex items-center gap-4 pt-2 text-pastel-subtle text-xs font-semibold">
+            <a href="https://linkedin.com" target="_blank" class="flex items-center gap-1.5 hover:text-pastel-slate transition-colors">
+              <i data-lucide="linkedin" class="w-4 h-4 text-pastel-sky-dark"></i> LinkedIn
+            </a>
+            <span class="text-gray-300">•</span>
+            <a href="https://github.com" target="_blank" class="flex items-center gap-1.5 hover:text-pastel-slate transition-colors">
+              <i data-lucide="github" class="w-4 h-4 text-pastel-slate"></i> GitHub
+            </a>
+            <span class="text-gray-300">•</span>
+            <span class="flex items-center gap-1.5 text-pastel-subtle">
+              <i data-lucide="map-pin" class="w-4 h-4 text-pastel-rose-dark"></i> Pune, Maharashtra
+            </span>
+          </div>
+        </div>
+
+        <!-- Profile Image Placeholder -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-72 h-80 sm:w-80 sm:h-96 rounded-3xl p-3 bg-gradient-to-tr from-pastel-lavender via-pastel-rose to-pastel-sky shadow-xl">
+            <div class="w-full h-full rounded-2xl bg-white overflow-hidden relative border border-white flex items-center justify-center">
+              <!-- Replace src with your image file/URL -->
+              <img src="./WhatsApp Image 2026-07-22 at 5.32.20 PM.jpeg" alt="Anushka Jagtap" class="w-full h-full object-cover object-center" />
+              <div class="absolute bottom-3 inset-x-3 bg-white/90 backdrop-blur-md px-3 py-2 rounded-xl border border-white/80 flex items-center justify-between">
+                <div>
+                  <p class="text-xs font-bold text-pastel-slate">Anushka Jagtap</p>
+                  <p class="text-[11px] text-pastel-subtle">Data & AI Specialist</p>
+                </div>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-emerald-100"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recruiter Snapshot -->
+    <section class="glass-card rounded-2xl p-6 sm:p-8 border border-pastel-lavender/60 shadow-sm relative overflow-hidden">
+      <div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-pastel-lavender/30 blur-2xl pointer-events-none"></div>
+      
+      <div class="flex items-center justify-between border-b border-gray-100 pb-4 mb-6">
+        <div class="flex items-center gap-2.5">
+          <div class="p-2 rounded-lg bg-pastel-lavender text-pastel-lavender-dark">
+            <i data-lucide="briefcase" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-pastel-slate">Recruiter 30-Second Snapshot</h3>
+            <p class="text-xs text-pastel-subtle">Essential candidate qualifications at a single glance</p>
+          </div>
+        </div>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-pastel-sky text-pastel-sky-dark hidden sm:inline-block">Open to Relocation / Remote</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+        <div class="bg-white/80 p-3.5 rounded-xl border border-gray-100">
+          <span class="text-pastel-subtle font-medium block mb-1">Target Roles</span>
+          <span class="text-pastel-slate font-bold">Data Analyst, BI Analyst, Business Analyst, AI/ML</span>
+        </div>
+        <div class="bg-white/80 p-3.5 rounded-xl border border-gray-100">
+          <span class="text-pastel-subtle font-medium block mb-1">Degree & Institute</span>
+          <span class="text-pastel-slate font-bold">B.E. AI & Data Science (SPPU, 2027)</span>
+        </div>
+        <div class="bg-white/80 p-3.5 rounded-xl border border-gray-100">
+          <span class="text-pastel-subtle font-medium block mb-1">Industry Experience</span>
+          <span class="text-pastel-slate font-bold">Data Science Intern (Binary & Bricks)</span>
+        </div>
+        <div class="bg-white/80 p-3.5 rounded-xl border border-gray-100">
+          <span class="text-pastel-subtle font-medium block mb-1">Core Tech Stack</span>
+          <span class="text-pastel-slate font-bold">Python, SQL, Power BI, Streamlit, Scikit-learn</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & What I Bring -->
+    <section id="about" class="space-y-8">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight text-pastel-slate">About & Capabilities</h2>
+        <p class="text-sm text-pastel-subtle">How I bridge the gap between technical models and business outcomes</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="p-5 rounded-2xl bg-pastel-lavender/30 border border-pastel-lavender hover:bg-pastel-lavender/50 transition-all">
+          <div class="w-9 h-9 rounded-xl bg-white text-pastel-lavender-dark flex items-center justify-center mb-3.5 shadow-sm">
+            <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+          </div>
+          <h4 class="text-sm font-bold text-pastel-slate mb-1.5">Data Analytics</h4>
+          <p class="text-xs text-pastel-subtle leading-relaxed">Cleaning structured & unstructured data, trend analysis, exploratory data analysis (EDA), and actionable metrics.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-pastel-sky/30 border border-pastel-sky hover:bg-pastel-sky/50 transition-all">
+          <div class="w-9 h-9 rounded-xl bg-white text-pastel-sky-dark flex items-center justify-center mb-3.5 shadow-sm">
+            <i data-lucide="pie-chart" class="w-5 h-5"></i>
+          </div>
+          <h4 class="text-sm font-bold text-pastel-slate mb-1.5">Business Intelligence</h4>
+          <p class="text-xs text-pastel-subtle leading-relaxed">Interactive Power BI and Streamlit dashboards tracking core KPIs to support executive decision-making.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-pastel-sage/30 border border-pastel-sage hover:bg-pastel-sage/50 transition-all">
+          <div class="w-9 h-9 rounded-xl bg-white text-pastel-sage-dark flex items-center justify-center mb-3.5 shadow-sm">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <h4 class="text-sm font-bold text-pastel-slate mb-1.5">Machine Learning</h4>
+          <p class="text-xs text-pastel-subtle leading-relaxed">End-to-end regression, classification, and forecasting pipelines built with Scikit-learn and Pandas.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-pastel-rose/30 border border-pastel-rose hover:bg-pastel-rose/50 transition-all">
+          <div class="w-9 h-9 rounded-xl bg-white text-pastel-rose-dark flex items-center justify-center mb-3.5 shadow-sm">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <h4 class="text-sm font-bold text-pastel-slate mb-1.5">NLP & AI Apps</h4>
+          <p class="text-xs text-pastel-subtle leading-relaxed">TF-IDF parsing, similarity matching, text embeddings, and intelligent user-facing recommendation engines.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-pastel-slate">Professional Experience</h2>
+          <p class="text-sm text-pastel-subtle">Practical application of data science methodologies in industry</p>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 sm:p-7 border border-pastel-lavender/50 relative">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+          <div>
+            <h3 class="text-lg font-bold text-pastel-slate">Data Science Intern</h3>
+            <p class="text-sm font-medium text-pastel-lavender-dark">Binary and Bricks</p>
+          </div>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 text-pastel-subtle self-start sm:self-auto">
+            <i data-lucide="calendar" class="w-3.5 h-3.5"></i> 2026 • Internship
+          </span>
+        </div>
+
+        <ul class="space-y-2.5 text-xs sm:text-sm text-pastel-subtle mb-5 list-disc pl-4 marker:text-pastel-lavender-dark">
+          <li>Preprocessed, cleaned, and interpreted complex datasets using Python, Pandas, and NumPy to support analytical modeling workflows.</li>
+          <li>Engineered predictive machine learning models using Scikit-learn, optimizing hyperparameter tuning for accurate evaluation metrics.</li>
+          <li>Conducted Exploratory Data Analysis (EDA) and generated intuitive visualizations with Matplotlib and Seaborn to communicate insights clearly.</li>
+          <li>Maintained collaborative version-controlled Git workflows across feature branches and model iteration sprints.</li>
+        </ul>
+
+        <div class="flex flex-wrap gap-2 pt-2 border-t border-gray-100">
+          <span class="px-2.5 py-1 rounded-lg bg-pastel-lavender/40 text-pastel-slate font-medium text-xs">Python</span>
+          <span class="px-2.5 py-1 rounded-lg bg-pastel-lavender/40 text-pastel-slate font-medium text-xs">Pandas</span>
+          <span class="px-2.5 py-1 rounded-lg bg-pastel-lavender/40 text-pastel-slate font-medium text-xs">Scikit-learn</span>
+          <span class="px-2.5 py-1 rounded-lg bg-pastel-lavender/40 text-pastel-slate font-medium text-xs">EDA</span>
+          <span class="px-2.5 py-1 rounded-lg bg-pastel-lavender/40 text-pastel-slate font-medium text-xs">Git</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section (Interactive Filter) -->
+    <section id="projects" class="space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-pastel-slate">Featured Projects</h2>
+          <p class="text-sm text-pastel-subtle">Proven implementations in NLP, predictive modeling, and business analytics</p>
+        </div>
+        
+        <!-- Interactive Category Filters -->
+        <div class="flex flex-wrap gap-1.5 p-1 bg-white border border-gray-200 rounded-xl text-xs font-medium self-start">
+          <button onclick="filterProjects('all', this)" class="filter-btn active px-3 py-1.5 rounded-lg bg-pastel-slate text-white transition-all">All</button>
+          <button onclick="filterProjects('ai-nlp', this)" class="filter-btn px-3 py-1.5 rounded-lg text-pastel-subtle hover:text-pastel-slate transition-all">AI & NLP</button>
+          <button onclick="filterProjects('ml-pred', this)" class="filter-btn px-3 py-1.5 rounded-lg text-pastel-subtle hover:text-pastel-slate transition-all">ML & Forecast</button>
+          <button onclick="filterProjects('bi-analytics', this)" class="filter-btn px-3 py-1.5 rounded-lg text-pastel-subtle hover:text-pastel-slate transition-all">Analytics & BI</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Project 1: HireSight -->
+        <div class="project-card glass-card rounded-2xl p-6 border border-pastel-lavender/60 flex flex-col justify-between" data-category="ai-nlp">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-pastel-lavender-dark bg-pastel-lavender/50 px-2.5 py-1 rounded-md">Featured • AI Platform</span>
+              <span class="text-xs text-pastel-subtle font-medium">2026</span>
+            </div>
+            <h3 class="text-lg font-bold text-pastel-slate">HireSight / HireX</h3>
+            <p class="text-xs text-pastel-subtle leading-relaxed">
+              Intelligent career intelligence and candidate evaluation platform that automates resume matching, skillset gap scoring, and automated candidate recommendation.
+            </p>
+            <div class="bg-white/60 p-3 rounded-xl border border-gray-100 text-xs space-y-1">
+              <p><strong class="font-semibold text-pastel-slate">Key Contribution:</strong> Built the NLP ranking pipeline, vector similarity matching, and interactive dashboard interface.</p>
+              <p><strong class="font-semibold text-pastel-slate">Outcome:</strong> Reduced manual resume screening time by 60% with instant candidate-job alignment metrics.</p>
+            </div>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">Python</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">NLP</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">Streamlit</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="#" class="p-2 rounded-lg bg-pastel-cream hover:bg-pastel-lavender/50 text-pastel-slate transition-colors" title="GitHub Repo"><i data-lucide="github" class="w-4 h-4"></i></a>
+              <a href="#" class="p-2 rounded-lg bg-pastel-cream hover:bg-pastel-lavender/50 text-pastel-slate transition-colors" title="Live Demo"><i data-lucide="external-link" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: AI Resume Analyzer -->
+        <div class="project-card glass-card rounded-2xl p-6 border border-pastel-lavender/60 flex flex-col justify-between" data-category="ai-nlp">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-pastel-rose-dark bg-pastel-rose/50 px-2.5 py-1 rounded-md">NLP Application</span>
+              <span class="text-xs text-pastel-subtle font-medium">2026</span>
+            </div>
+            <h3 class="text-lg font-bold text-pastel-slate">AI Resume Analyzer & Matcher</h3>
+            <p class="text-xs text-pastel-subtle leading-relaxed">
+              Automated document parsing engine calculating semantic TF-IDF and Cosine Similarity scores against specific job descriptions to produce detailed match ratings.
+            </p>
+            <div class="bg-white/60 p-3 rounded-xl border border-gray-100 text-xs space-y-1">
+              <p><strong class="font-semibold text-pastel-slate">Key Contribution:</strong> Implemented NLTK text pre-processing, stopword sanitization, and keyword density visualizer.</p>
+              <p><strong class="font-semibold text-pastel-slate">Outcome:</strong> Provides instant scoring and missing keyword suggestions to help applicants optimize resumes.</p>
+            </div>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">TF-IDF</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">Scikit-learn</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">Streamlit</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="#" class="p-2 rounded-lg bg-pastel-cream hover:bg-pastel-lavender/50 text-pastel-slate transition-colors" title="GitHub Repo"><i data-lucide="github" class="w-4 h-4"></i></a>
+              <a href="#" class="p-2 rounded-lg bg-pastel-cream hover:bg-pastel-lavender/50 text-pastel-slate transition-colors" title="Live Demo"><i data-lucide="external-link" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Sales Forecasting Dashboard -->
+        <div class="project-card glass-card rounded-2xl p-6 border border-pastel-lavender/60 flex flex-col justify-between" data-category="bi-analytics ml-pred">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-pastel-sage-dark bg-pastel-sage/50 px-2.5 py-1 rounded-md">BI & Analytics</span>
+              <span class="text-xs text-pastel-subtle font-medium">2026</span>
+            </div>
+            <h3 class="text-lg font-bold text-pastel-slate">BI & Sales Forecasting Engine</h3>
+            <p class="text-xs text-pastel-subtle leading-relaxed">
+              Interactive business intelligence dashboard delivering KPI breakdowns, customer cohort analysis, and time-series demand forecasting for retail management.
+            </p>
+            <div class="bg-white/60 p-3 rounded-xl border border-gray-100 text-xs space-y-1">
+              <p><strong class="font-semibold text-pastel-slate">Key Contribution:</strong> Built SQL aggregation queries, calculated sales trends, and deployed an interactive visual dashboard.</p>
+              <p><strong class="font-semibold text-pastel-slate">Outcome:</strong> Empowered data-backed inventory planning with an estimated 88% forecast accuracy.</p>
+            </div>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">Power BI</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">SQL</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">Plotly</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="#" class="p-2 rounded-lg bg-pastel-cream hover:bg-pastel-lavender/50 text-pastel-slate transition-colors" title="GitHub Repo"><i data-lucide="github" class="w-4 h-4"></i></a>
+              <a href="#" class="p-2 rounded-lg bg-pastel-cream hover:bg-pastel-lavender/50 text-pastel-slate transition-colors" title="Live Demo"><i data-lucide="external-link" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Car Price Prediction -->
+        <div class="project-card glass-card rounded-2xl p-6 border border-pastel-lavender/60 flex flex-col justify-between" data-category="ml-pred">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-pastel-sky-dark bg-pastel-sky/50 px-2.5 py-1 rounded-md">Machine Learning</span>
+              <span class="text-xs text-pastel-subtle font-medium">2025</span>
+            </div>
+            <h3 class="text-lg font-bold text-pastel-slate">Car Valuation & Price Prediction</h3>
+            <p class="text-xs text-pastel-subtle leading-relaxed">
+              Regression model assessing vehicle attributes (mileage, engine specs, brand retention, age) to predict resale valuations with continuous error monitoring.
+            </p>
+            <div class="bg-white/60 p-3 rounded-xl border border-gray-100 text-xs space-y-1">
+              <p><strong class="font-semibold text-pastel-slate">Key Contribution:</strong> Handled categorical encoding, outliner filtering, and trained Random Forest / Gradient Boosting regressors.</p>
+              <p><strong class="font-semibold text-pastel-slate">Outcome:</strong> Delivered high $R^2$ model stability with a clean Streamlit interface for non-technical users.</p>
+            </div>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">Scikit-learn</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">Pandas</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-medium">Streamlit</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="#" class="p-2 rounded-lg bg-pastel-cream hover:bg-pastel-lavender/50 text-pastel-slate transition-colors" title="GitHub Repo"><i data-lucide="github" class="w-4 h-4"></i></a>
+              <a href="#" class="p-2 rounded-lg bg-pastel-cream hover:bg-pastel-lavender/50 text-pastel-slate transition-colors" title="Live Demo"><i data-lucide="external-link" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="space-y-6">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight text-pastel-slate">Technical Skills & Competencies</h2>
+        <p class="text-sm text-pastel-subtle">Categorized tool stack proven through practical projects</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- Programming & Data Handling -->
+        <div class="p-5 rounded-2xl bg-white border border-gray-100 shadow-sm space-y-3">
+          <div class="flex items-center gap-2 font-bold text-sm text-pastel-slate">
+            <i data-lucide="terminal" class="w-4 h-4 text-pastel-lavender-dark"></i>
+            Programming & Querying
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-3 py-1 rounded-lg bg-pastel-lavender/30 text-pastel-slate text-xs font-medium">Python</span>
+            <span class="px-3 py-1 rounded-lg bg-pastel-lavender/30 text-pastel-slate text-xs font-medium">SQL (MySQL, PostgreSQL)</span>
+            <span class="px-3 py-1 rounded-lg bg-pastel-lavender/30 text-pastel-slate text-xs font-medium">Git & GitHub</span>
+            <span class="px-3 py-1 rounded-lg bg-pastel-lavender/30 text-pastel-slate text-xs font-medium">Bash Basics</span>
+          </div>
+        </div>
+
+        <!-- Data Science & ML -->
+        <div class="p-5 rounded-2xl bg-white border border-gray-100 shadow-sm space-y-3">
+          <div class="flex items-center gap-2 font-bold text-sm text-pastel-slate">
+            <i data-lucide="database" class="w-4 h-4 text-pastel-sky-dark"></i>
+            Data Analysis & ML
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-3 py-1 rounded-lg bg-pastel-sky/30 text-pastel-slate text-xs font-medium">Pandas</span>
+            <span class="px-3 py-1 rounded-lg bg-pastel-sky/30 text-pastel-slate text-xs font-medium">NumPy</span>
+            <span class="px-3 py-1 rounded-lg bg-pastel-sky/30 text-pastel-slate text-xs font-medium">Scikit-learn</span>
+            <span class="px-3 py-1 rounded-lg bg-pastel-sky/30 text-pastel-slate text-xs font-medium">EDA & Preprocessing</span>
+            <span class="px-3 py-1 rounded-lg bg-pastel-sky/30 text-pastel-slate text-xs font-medium">NLP & TF-IDF</span>
+          </div>
+        </div>
+
+        <!-- BI & Application Deployment -->
+        <div class="p-5 rounded-2xl bg-white border border-gray-100 shadow-sm space-y-3">
+          <div class="flex items-center gap-2 font-bold text-sm text-pastel-slate">
+            <i data-lucide="layout-dashboard" class="w-4 h-4 text-pastel-sage-dark"></i>
+            Visualization & UI
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-3 py-1 rounded-lg bg-pastel-sage/30 text-pastel-slate text-xs font-medium">Power BI</span>
+            <span class="px-3 py-1 rounded-lg bg-pastel-sage/30 text-pastel-slate text-xs font-medium">Matplotlib / Seaborn</span>
+            <span class="px-3 py-1 rounded-lg bg-pastel-sage/30 text-pastel-slate text-xs font-medium">Plotly</span>
+            <span class="px-3 py-1 rounded-lg bg-pastel-sage/30 text-pastel-slate text-xs font-medium">Streamlit</span>
+            <span class="px-3 py-1 rounded-lg bg-pastel-sage/30 text-pastel-slate text-xs font-medium">Flask</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Education -->
+      <div class="space-y-4">
+        <h2 class="text-xl font-bold tracking-tight text-pastel-slate flex items-center gap-2">
+          <i data-lucide="graduation-cap" class="w-5 h-5 text-pastel-lavender-dark"></i> Education
+        </h2>
+        <div class="glass-card rounded-2xl p-6 border border-pastel-lavender/50 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-pastel-lavender-dark">Expected Graduation: 2027</span>
+            <span class="text-xs px-2.5 py-0.5 rounded-full bg-pastel-sage/50 text-pastel-sage-dark font-semibold">Undergraduate</span>
+          </div>
+          <h3 class="text-base font-bold text-pastel-slate">Bachelor of Engineering (B.E.)</h3>
+          <p class="text-sm font-semibold text-pastel-slate">Artificial Intelligence & Data Science</p>
+          <p class="text-xs text-pastel-subtle">Savitribai Phule Pune University (SPPU), Maharashtra</p>
+          <div class="pt-3 border-t border-gray-100 text-xs text-pastel-subtle">
+            <strong class="text-pastel-slate">Relevant Coursework:</strong> Machine Learning, Database Management Systems, Pattern Recognition, Web Technology, Data Science & Visualisation.
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="space-y-4">
+        <h2 class="text-xl font-bold tracking-tight text-pastel-slate flex items-center gap-2">
+          <i data-lucide="award" class="w-5 h-5 text-pastel-rose-dark"></i> Certifications & Courses
+        </h2>
+        <div class="glass-card rounded-2xl p-6 border border-pastel-lavender/50 space-y-4">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-sm font-bold text-pastel-slate">Complete Data Science & ML Masterclass</h4>
+              <p class="text-xs text-pastel-subtle">Udemy • Python, Pandas, Scikit-learn, Visualizations</p>
+            </div>
+            <a href="#" class="text-xs font-semibold text-pastel-lavender-dark hover:underline flex items-center gap-1">Verify <i data-lucide="external-link" class="w-3 h-3"></i></a>
+          </div>
+          <div class="border-t border-gray-100 pt-3 flex items-start justify-between">
+            <div>
+              <h4 class="text-sm font-bold text-pastel-slate">SQL for Data Analytics & Business Intelligence</h4>
+              <p class="text-xs text-pastel-subtle">Specialized Course • Relational Queries, Window Functions & CTEs</p>
+            </div>
+            <a href="#" class="text-xs font-semibold text-pastel-lavender-dark hover:underline flex items-center gap-1">Verify <i data-lucide="external-link" class="w-3 h-3"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="glass-card rounded-3xl p-8 border border-pastel-lavender/70 shadow-sm text-center max-w-3xl mx-auto space-y-5">
+      <div class="w-12 h-12 rounded-2xl bg-pastel-lavender text-pastel-lavender-dark mx-auto flex items-center justify-center">
+        <i data-lucide="file-text" class="w-6 h-6"></i>
+      </div>
+      <div class="space-y-2">
+        <h2 class="text-2xl font-bold text-pastel-slate">Curriculum Vitae / Resume</h2>
+        <p class="text-xs sm:text-sm text-pastel-subtle max-w-md mx-auto">
+          Need a traditional one-page resume for your recruitment pipeline? Download a clean ATS-friendly PDF copy below.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+        <a href="./ANUSHKA RESUME.pdf" download class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-pastel-slate text-white text-sm font-semibold hover:bg-black transition-all shadow-sm">
+          <i data-lucide="download" class="w-4 h-4"></i> Download Resume (PDF)
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-gray-200 text-pastel-slate text-sm font-semibold hover:bg-gray-50 transition-all">
+          <i data-lucide="linkedin" class="w-4 h-4 text-pastel-sky-dark"></i> View LinkedIn Profile
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="space-y-6">
+      <div class="text-center max-w-xl mx-auto space-y-2">
+        <h2 class="text-2xl font-bold tracking-tight text-pastel-slate">Let's Connect</h2>
+        <p class="text-xs sm:text-sm text-pastel-subtle">
+          Currently open to Data Analyst, Business Analyst, BI, and Data Science internship or entry-level opportunities.
+        </p>
+      </div>
+
+      <div class="max-w-xl mx-auto bg-white rounded-3xl p-6 sm:p-8 border border-pastel-lavender shadow-sm">
+        <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-pastel-slate mb-1">Your Name</label>
+            <input type="text" required placeholder="Jane Doe" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-pastel-lavender-dark/40 focus:border-pastel-lavender-dark" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-pastel-slate mb-1">Email Address</label>
+            <input type="email" required placeholder="jane@company.com" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-pastel-lavender-dark/40 focus:border-pastel-lavender-dark" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-pastel-slate mb-1">Message</label>
+            <textarea rows="4" required placeholder="Hi Anushka, we’d love to speak with you regarding a Data Analyst role..." class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-pastel-lavender-dark/40 focus:border-pastel-lavender-dark"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3 rounded-xl bg-pastel-slate text-white text-xs font-bold hover:bg-black transition-all">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-28 border-t border-pastel-lavender/50 py-8 bg-white/50 text-center text-xs text-pastel-subtle">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-medium text-pastel-slate">© 2026 Anushka Jagtap. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="https://linkedin.com" target="_blank" class="hover:text-pastel-slate transition-colors">LinkedIn</a>
+        <a href="https://github.com" target="_blank" class="hover:text-pastel-slate transition-colors">GitHub</a>
+        <a href="#hero" class="hover:text-pastel-slate transition-colors">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Icons & Interactive Features -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Copy Email Toast Helper
+    function copyEmail(email) {
+      navigator.clipboard.writeText(email).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        setTimeout(() => {
+          toast.classList.add('translate-y-20', 'opacity-0');
+        }, 2500);
+      });
+    }
+
+    // Project Interactive Filtering
+    function filterProjects(category, btn) {
+      // Toggle button styles
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('bg-pastel-slate', 'text-white', 'active');
+        b.classList.add('text-pastel-subtle');
+      });
+      btn.classList.add('bg-pastel-slate', 'text-white', 'active');
+      btn.classList.remove('text-pastel-subtle');
+
+      // Filter cards
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        const categories = card.getAttribute('data-category');
+        if (category === 'all' || categories.includes(category)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Form Handling Mock
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert('Thank you for reaching out! This form can be linked to your preferred email handler (Formspree, EmailJS, etc.).');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
