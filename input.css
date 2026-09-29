@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(48, 54, 66, 0.05);
+}
+
+.glass-card-darker {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(234, 230, 250, 0.6);
+}
+
+/* 3D Tilt Card */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.2s ease;
+}
+
+/* Interactive Spotlight Card */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(234, 230, 250, 0.4),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* Animated Aurora Background Mesh Blobs */
+@keyframes auroraMove1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(120px, 80px) scale(1.15) rotate(45deg);
+  }
+  66% {
+    transform: translate(-60px, 140px) scale(0.9) rotate(90deg);
+  }
+}
+
+@keyframes auroraMove2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(-140px, 100px) scale(0.95) rotate(-30deg);
+  }
+  66% {
+    transform: translate(80px, -60px) scale(1.1) rotate(-60deg);
+  }
+}
+
+@keyframes auroraMove3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1.05) rotate(0deg);
+  }
+  50% {
+    transform: translate(100px, -120px) scale(0.85) rotate(60deg);
+  }
+}
+
+@keyframes auroraMove4 {
+  0%, 100% {
+    transform: translate(0, 0) scale(0.9) rotate(0deg);
+  }
+  50% {
+    transform: translate(-90px, -80px) scale(1.2) rotate(-45deg);
+  }
+}
+
+.aurora-blob-1 {
+  animation: auroraMove1 22s ease-in-out infinite;
+}
+
+.aurora-blob-2 {
+  animation: auroraMove2 26s ease-in-out infinite;
+}
+
+.aurora-blob-3 {
+  animation: auroraMove3 24s ease-in-out infinite;
+}
+
+.aurora-blob-4 {
+  animation: auroraMove4 28s ease-in-out infinite;
+}
+
+/* Subtle Interactive Tech Grid */
+.tech-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(142, 125, 190, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(142, 125, 190, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Global Dynamic Mouse Glow */
+#global-mouse-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(234, 230, 250, 0.6) 0%, rgba(224, 240, 248, 0.35) 40%, transparent 70%);
+  transform: translate(-50%, -50%);
+  filter: blur(50px);
+  will-change: transform;
+  transition: opacity 0.4s ease;
+}
+
+/* Float Animations for Floating Badges */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes floatDelayed {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1.5deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatDelayed 6s ease-in-out 1.5s infinite;
+}
+
+/* Typewriter blinking cursor */
+@keyframes blinkCursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #8E7DBE; }
+}
+
+.typewriter-cursor {
+  border-right: 2px solid #8E7DBE;
+  animation: blinkCursor 0.75s step-end infinite;
+}
+
+/* Modal backdrop blur & animations */
+.modal-overlay {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.modal-content {
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}

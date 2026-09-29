@@ -1,0 +1,12 @@
+{
+  "name": "anushka-portfolio",
+  "version": "1.0.0",
+  "description": "Anushka Jagtap - AI & Data Science Portfolio",
+  "scripts": {
+    "build:css": "tailwindcss -i ./input.css -o ./style.css --minify",
+    "watch:css": "tailwindcss -i ./input.css -o ./style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
